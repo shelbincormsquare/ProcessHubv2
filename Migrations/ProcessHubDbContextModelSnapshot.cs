@@ -20,7 +20,7 @@ namespace ProcessHub.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ProcessHub.Models.Project", b =>
+            modelBuilder.Entity("ProcessHub.Core.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -32,7 +32,7 @@ namespace ProcessHub.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("ProcessHub.Models.WorkItem", b =>
+            modelBuilder.Entity("ProcessHub.Core.Models.WorkItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -48,9 +48,9 @@ namespace ProcessHub.Migrations
                     b.ToTable("WorkItems");
                 });
 
-            modelBuilder.Entity("ProcessHub.Models.WorkItem", b =>
+            modelBuilder.Entity("ProcessHub.Core.Models.WorkItem", b =>
                 {
-                    b.HasOne("ProcessHub.Models.Project", "Project")
+                    b.HasOne("ProcessHub.Core.Models.Project", "Project")
                         .WithMany("WorkItems")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);

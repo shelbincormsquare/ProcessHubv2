@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ProcessHub.Models;
+using ProcessHub.Core.Models;
 
 namespace ProcessHub.Persistence
 {

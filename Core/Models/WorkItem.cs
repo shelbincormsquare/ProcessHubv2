@@ -1,4 +1,4 @@
-namespace ProcessHub.Models
+namespace ProcessHub.Core.Models
 {
     public class WorkItem
     {

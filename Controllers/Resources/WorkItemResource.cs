@@ -1,4 +1,4 @@
-namespace ProcessHub_Angular.Controllers.Resources 
+namespace ProcessHub.Controllers.Resources 
 {
     public class WorkItemResource 
     {

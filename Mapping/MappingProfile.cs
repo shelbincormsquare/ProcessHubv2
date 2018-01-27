@@ -1,8 +1,8 @@
 using AutoMapper;
-using ProcessHub.Models;
-using ProcessHub_Angular.Controllers.Resources;
+using ProcessHub.Core.Models;
+using ProcessHub.Controllers.Resources;
 
-namespace ProcessHub_Angular.Mapping
+namespace ProcessHub.Mapping
 {
     public class MappingProfile:Profile
     {

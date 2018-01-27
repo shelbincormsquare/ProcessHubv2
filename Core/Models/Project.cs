@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace ProcessHub.Models
+namespace ProcessHub.Core.Models
 {
     public class Project
     {
