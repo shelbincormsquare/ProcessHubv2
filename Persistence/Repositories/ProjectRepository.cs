@@ -12,23 +12,20 @@ namespace ProcessHub.Persistence.Repositories {
 
         }
         public void Add (Project project) {
-            throw new System.NotImplementedException ();
+            context.Projects.Add (project);
         }
 
-        public Task<Project> GetProject (int id) {
-            throw new System.NotImplementedException ();
+        public async Task<Project> GetProject (int id) {
+            return await context.Projects.FindAsync (id);
         }
 
         public async Task<List<Project>> GetProjects () {
-              return await context.Projects.ToListAsync();
+            return await context.Projects.ToListAsync ();
         }
 
         public void Remove (Project project) {
-            throw new System.NotImplementedException ();
+            context.Remove (project);
         }
 
-        public void Update (Project project) {
-            throw new System.NotImplementedException ();
-        }
     }
 }

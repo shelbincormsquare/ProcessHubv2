@@ -9,7 +9,6 @@ namespace ProcessHub.Core.Repositories
         Task<Project> GetProject(int id); 
         void Add(Project project);
         void Remove(Project project);
-        void Update(Project project);
         Task<List<Project>> GetProjects();
     }
 }
