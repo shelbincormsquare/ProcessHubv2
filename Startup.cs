@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProcessHub.Persistence;
 using AutoMapper;
+using ProcessHub.Persistence.Repositories;
+using ProcessHub.Core.Repositories;
+using ProcessHub.Core;
 
 namespace ProcessHub {
     public class Startup {
@@ -21,6 +24,9 @@ namespace ProcessHub {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<IWorkItemRepository, WorkItemRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper ();
             services.AddDbContext<ProcessHubDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("Default")));
             services.AddMvc ();

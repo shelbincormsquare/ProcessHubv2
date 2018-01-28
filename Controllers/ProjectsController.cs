@@ -22,37 +22,37 @@ namespace ProcessHub.Controllers {
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ProjectResource>> GetProjects () {
-            var projects = await context.Projects.Include (p => p.WorkItems).ToListAsync ();
+        public async Task<List<ProjectResource>> GetProjects () {
+            var projects = await repository.GetProjects();
             return mapper.Map<List<Project>, List<ProjectResource>> (projects);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateProject ([FromBody] ProjectResource projectResource) {
-            if (!ModelState.IsValid)
-                return BadRequest (ModelState);
+        // [HttpPost]
+        // public async Task<IActionResult> CreateProject ([FromBody] ProjectResource projectResource) {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest (ModelState);
 
-            var project = mapper.Map<ProjectResource, Project> (projectResource);
-            context.Projects.Add (project);
-            await context.SaveChangesAsync ();
+        //     var project = mapper.Map<ProjectResource, Project> (projectResource);
+        //     context.Projects.Add (project);
+        //     await context.SaveChangesAsync ();
 
-            var result = mapper.Map<Project, ProjectResource> (project);
-            return Ok (result);
+        //     var result = mapper.Map<Project, ProjectResource> (project);
+        //     return Ok (result);
 
-        }
+        // }
 
-        [HttpPut ("{id}")]
-        public async Task<IActionResult> UpdateProject (int id, [FromBody] ProjectResource projectResource) {
-            if (!ModelState.IsValid)
-                return BadRequest (ModelState);
+        // [HttpPut ("{id}")]
+        // public async Task<IActionResult> UpdateProject (int id, [FromBody] ProjectResource projectResource) {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest (ModelState);
 
-            var project = await context.Projects.FindAsync (id);
-            mapper.Map<ProjectResource, Project> (projectResource, project);
+        //     var project = await context.Projects.FindAsync (id);
+        //     mapper.Map<ProjectResource, Project> (projectResource, project);
 
-            await context.SaveChangesAsync ();
+        //     await context.SaveChangesAsync ();
 
-            var result = mapper.Map<Project, ProjectResource> (project);
-            return Ok (result);
-        }
+        //     var result = mapper.Map<Project, ProjectResource> (project);
+        //     return Ok (result);
+        // }
     }
 }

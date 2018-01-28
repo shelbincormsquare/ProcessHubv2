@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ProcessHub.Core.Models;
 
@@ -9,6 +10,6 @@ namespace ProcessHub.Core.Repositories
         void Add(Project project);
         void Remove(Project project);
         void Update(Project project);
-        Task<Project> GetProjects();
+        Task<List<Project>> GetProjects();
     }
 }
