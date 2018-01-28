@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProcessHub.Controllers.Resources;
 using ProcessHub.Core;
 using ProcessHub.Core.Models;
 using ProcessHub.Core.Repositories;
-using ProcessHub.Persistence;
+using ProcessHub.Core.Resources;
 
-namespace ProcessHub.Controllers {
+namespace ProcessHub.Controllers
+{
     [Route ("/api/projects")]
     public class ProjectsController : Controller {
         private readonly IMapper mapper;

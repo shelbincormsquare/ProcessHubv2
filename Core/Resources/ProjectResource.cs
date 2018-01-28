@@ -1,4 +1,4 @@
-namespace ProcessHub.Controllers.Resources
+namespace ProcessHub.Core.Resources
 {
     public class ProjectResource
     {
